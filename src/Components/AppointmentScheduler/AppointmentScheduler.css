@@ -1,0 +1,92 @@
+.cita-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+}
+
+.cita-container h2 {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.date-picker,
+.time-picker,
+.name-input,
+.note-input {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 50px;
+}
+
+.selected-info p {
+  margin-top: 100px;
+  color: #555;
+}
+
+.note-input {
+  height: 100px;
+}
+
+.name-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: black;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ant-picker {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.ant-picker-input > input {
+  color: #000;
+}
+
+.ant-picker:hover {
+  border-color: #888;
+}
+
+.anticon {
+  color: #000;
+}
+
+.ant-picker-suffix {
+  color: #000;
+}
+
+.ant-picker-panel-container {
+  background-color: #fff;
+  color: #000;
+}

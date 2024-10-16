@@ -1,0 +1,85 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #1e3a5f, #000);
+  padding-top: 100px;
+}
+
+.barber-shop-name h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #1e3a5f, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  color: white;
+  position: relative;
+  transform: scale(1, 1.2) rotate(0deg);
+  text-shadow: (3px 3px 0px black);
+}
+
+.barber-shop-name p {
+  margin-top: 60px;
+  font-size: 2rem;
+  color: white;
+}
+
+.book-now {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.book-now:hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.book-now:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.crumble {
+  animation: crumble 1.5s forwards ease-in-out;
+}
+
+@keyframes crumble {
+  0% {
+    transform: translateY(0);
+    opacity: 4;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.barber-shop-name h1,
+.barber-shop-name p,
+.book-now {
+  display: inline-block;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.btn-panel {
+  margin-top: 200px;
+}

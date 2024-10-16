@@ -1,0 +1,36 @@
+.service-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+.welcome-section {
+  background: linear-gradient(135deg, #1e3a5f, #000);
+  color: white;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.welcome-section h1 {
+  font-size: 1.7rem;
+  color: white;
+  text-shadow: 3px 3px 8px rgba(218, 213, 213, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  margin: 10px 0;
+}
