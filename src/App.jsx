@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 import BookingPage from "./Pages/Booking/BookingPage";
 import "antd/dist/reset.css";
 import HomePage from "./Pages/Home/HomePage";
 import ServicesPage from "./Pages/Services/ServicesPage";
 ("./Components/ServiceCard/ServiceCard");
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminPage from "./Pages/Admin/AdminPage";
 
 function App() {

@@ -1,4 +1,4 @@
-import profilePhoto from "../../assets/gredykentphoto.jpg";
+import profilePhoto from "../../../public/Image/gredykentphoto.jpg";
 import "./BookingPage.css";
 import Header from "../../Components/Header/Header";
 import AppointmentScheduler from "../../Components/AppointmentScheduler/AppointmentScheduler";

@@ -3,7 +3,7 @@
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  background-image: url("../../assets/chair-barbershop.jpg");
+  background-image: url("../../../public/Image/chair-barbershop.jpg");
   background-size: contain;
   background-position: bottom center;
   background-repeat: repeat;

@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "antd/dist/reset.css";
-import { DatePicker, TimePicker, ConfigProvider, Button } from "antd";
+import { Modal, DatePicker, TimePicker, ConfigProvider, Button } from "antd";
 import esES from "antd/lib/locale/es_ES";
 import "./AppointmentScheduler.css";
 
 const AppointmentScheduler = () => {
-  const [date, setDate] = useState(null);
-  const [time, setTime] = useState(null);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [name, setName] = useState("");
   const [note, setNote] = useState("");
   const [service, setService] = useState("haircut");
   const [message, setMessage] = useState("");
+  const [isModelVisible, setModelVisible] = useState(false);
 
   const handleDateChange = (date, dateString) => {
     setDate(dateString);
@@ -50,8 +51,10 @@ const AppointmentScheduler = () => {
         setMessage("cita creada con exito");
         setName("");
         setNote("");
-        setTime(null);
-        setDate(null);
+        setTime("");
+        setDate("");
+
+        setModelVisible(true);
       } else {
         console.log("Failed to create appointment");
         setMessage("fallo la creacion de la cita");
@@ -61,6 +64,9 @@ const AppointmentScheduler = () => {
     }
   };
 
+  const handleModel = () => {
+    setModelVisible(false);
+  };
   return (
     <ConfigProvider locale={esES}>
       <form onSubmit={handleSubmit} className="cita-container">
@@ -98,6 +104,17 @@ const AppointmentScheduler = () => {
           <p> {date}</p>
         </div>
       </form>
+      <Modal
+        title="Cita confirmada"
+        visible={isModelVisible}
+        onOk={handleModel}
+        onCancel={handleModel}
+      >
+        <p>
+          Su cita ha sido creada con éxito. Recibirá un mensaje con más detalles
+          sobre su cita.
+        </p>
+      </Modal>
     </ConfigProvider>
   );
 };

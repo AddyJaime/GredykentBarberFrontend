@@ -50,7 +50,7 @@ const Header = ({ onMenuToggle, showBackIcon = false }) => {
 
 Header.propTypes = {
   onMenuToggle: PropTypes.func.isRequired,
-  showBackIcon: PropTypes.bool.isRequired,
+  showBackIcon: PropTypes.bool,
 };
 
 export default Header;
