@@ -38,13 +38,16 @@ const AppointmentScheduler = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/reservations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(appointmentData),
-      });
+      const response = await fetch(
+        "https://gredy-kent-barber-back-end.vercel.app/api/reservations",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(appointmentData),
+        }
+      );
 
       if (response.ok) {
         console.log("Appointment created successfully!");

@@ -10,7 +10,9 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchDataRervations = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/reservations");
+        const response = await fetch(
+          "https://gredy-kent-barber-back-end.vercel.app/api/reservations"
+        );
         const data = await response.json();
         setReservations(data);
         console.log(data);
