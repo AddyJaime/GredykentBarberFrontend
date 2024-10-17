@@ -14,9 +14,9 @@ const HomePage = () => {
     }, 700);
   };
 
-  const handleAdminPanel = () => {
-    navigate("/admin");
-  };
+  // const handleAdminPanel = () => {
+  //   navigate("/admin");
+  // };
   return (
     <div className={`home-page ${isCrumbling ? "crumble" : ""}`}>
       <div className="background-container">
@@ -34,9 +34,9 @@ const HomePage = () => {
         Reserva Ahora
       </button>
       {
-        <button className="btn-panel" onClick={handleAdminPanel}>
-          Panel de administracion
-        </button>
+        // <button className="btn-panel" onClick={handleAdminPanel}>
+        //   Panel de administracion
+        // </button>
       }
     </div>
   );
