@@ -11,7 +11,7 @@ const AdminPage = () => {
     const fetchDataRervations = async () => {
       try {
         const response = await fetch(
-          "https://gredy-kent-barber-shop-asks754os-addy-jaimes-projects.vercel.app/api/reservations"
+          "https://gredy-kent-barber-back-end.vercel.app/api/reservations"
         );
         const data = await response.json();
         setReservations(data);
