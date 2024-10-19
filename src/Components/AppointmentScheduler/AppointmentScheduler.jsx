@@ -36,14 +36,21 @@ const AppointmentScheduler = () => {
         time,
         note,
       };
-
       const res = await axios.post("/api/reservations", appointmentData);
+
       setMessage("cita creada con exito");
+      setName("");
+      setNote("");
+      setTime("");
+      setDate("");
+
+      setModelVisible(true);
 
       console.log(res.data);
     } catch (error) {
       console.log({ error });
       setMessage("fallo la creacion de la cita");
+      setModelVisible(false);
     }
   };
 
