@@ -64,7 +64,10 @@ const AppointmentScheduler = () => {
       // }
 
       await axios
-        .get("/api/reservations", appointmentData)
+        .post(
+          "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations",
+          appointmentData
+        )
         .then((res) => {
           console.log(res.data, service, message);
           setMessage("cita creada con exito");
