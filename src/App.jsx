@@ -7,6 +7,10 @@ import ServicesPage from "./Pages/Services/ServicesPage";
 ("./Components/ServiceCard/ServiceCard");
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminPage from "./Pages/Admin/AdminPage";
+import axios from "axios";
+
+axios.defaults.baseURL =
+  "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com";
 
 function App() {
   return (

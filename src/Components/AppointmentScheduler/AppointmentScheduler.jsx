@@ -3,6 +3,7 @@ import "antd/dist/reset.css";
 import { Modal, DatePicker, TimePicker, ConfigProvider, Button } from "antd";
 import esES from "antd/lib/locale/es_ES";
 import "./AppointmentScheduler.css";
+import axios from "axios";
 
 const AppointmentScheduler = () => {
   const [date, setDate] = useState("");
@@ -29,39 +30,53 @@ const AppointmentScheduler = () => {
       return;
     }
 
-    const appointmentData = {
-      name,
-      service,
-      date,
-      time,
-      note,
-    };
-
     try {
-      const response = await fetch(
-        "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(appointmentData),
-        }
-      );
+      const appointmentData = {
+        name,
+        service,
+        date,
+        time,
+        note,
+      };
+      // const response = await fetch(
+      //   "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(appointmentData),
+      //   }
+      // );
 
-      if (response.ok) {
-        console.log("Appointment created successfully!");
-        setMessage("cita creada con exito");
-        setName("");
-        setNote("");
-        setTime("");
-        setDate("");
+      // if (response.ok) {
+      //   console.log("Appointment created successfully!");
+      //   setMessage("cita creada con exito");
+      //   setName("");
+      //   setNote("");
+      //   setTime("");
+      //   setDate("");
 
-        setModelVisible(true);
-      } else {
-        console.log("Failed to create appointment");
-        setMessage("fallo la creacion de la cita");
-      }
+      //   setModelVisible(true);
+      // } else {
+      //   console.log("Failed to create appointment");
+      //   setMessage("fallo la creacion de la cita");
+      // }
+
+      await axios
+        .get("/api/reservations", appointmentData)
+        .then((res) => {
+          console.log(res.data, service, message);
+          setMessage("cita creada con exito");
+          setName("");
+          setNote("");
+          setTime("");
+          setDate("");
+          setService("");
+        })
+        .catch((err) => {
+          console.error({ err });
+        });
     } catch (error) {
       console.log("Error sending data to server", error);
     }
