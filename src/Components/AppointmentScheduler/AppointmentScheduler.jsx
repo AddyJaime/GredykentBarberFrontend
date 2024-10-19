@@ -36,59 +36,14 @@ const AppointmentScheduler = () => {
         time,
         note,
       };
-      const res = await axios.post(
-        "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations",
-        appointmentData
-      );
+
+      const res = await axios.post("/api/reservations", appointmentData);
+      setMessage("cita creada con exito");
 
       console.log(res.data);
     } catch (error) {
       console.log({ error });
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!name || !date || !time) {
-      setMessage("Por favor, llena todos los campos requeridos.");
-      return;
-    }
-
-    try {
-      const appointmentData = {
-        name,
-        service,
-        date,
-        time,
-        note,
-      };
-      const response = await fetch(
-        "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(appointmentData),
-        }
-      );
-
-      if (response.ok) {
-        console.log("Appointment created successfully!");
-        setMessage("cita creada con exito");
-        setName("");
-        setNote("");
-        setTime("");
-        setDate("");
-
-        setModelVisible(true);
-      } else {
-        console.log("Failed to create appointment");
-        setMessage("fallo la creacion de la cita");
-      }
-    } catch (error) {
-      console.log("Error sending data to server", error);
+      setMessage("fallo la creacion de la cita");
     }
   };
 
