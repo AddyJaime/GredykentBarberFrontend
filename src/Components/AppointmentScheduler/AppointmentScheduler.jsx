@@ -39,7 +39,7 @@ const AppointmentScheduler = () => {
 
     try {
       const response = await fetch(
-        "https://gredy-kent-barber-back-end.vercel.app/api/reservations",
+        "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/",
         {
           method: "POST",
           headers: {
