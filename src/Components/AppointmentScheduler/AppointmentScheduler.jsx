@@ -3,6 +3,7 @@ import "antd/dist/reset.css";
 import { Modal, DatePicker, TimePicker, ConfigProvider, Button } from "antd";
 import esES from "antd/lib/locale/es_ES";
 import "./AppointmentScheduler.css";
+import axios from "axios";
 
 const AppointmentScheduler = () => {
   const [date, setDate] = useState("");
@@ -19,6 +20,31 @@ const AppointmentScheduler = () => {
 
   const handleTimeChange = (time, timeString) => {
     setTime(timeString);
+  };
+
+  const createAppointment = async (e) => {
+    e.preventDefault();
+    if (!name || !date || !time) {
+      setMessage("Por favor, llena todos los campos requeridos.");
+      return;
+    }
+    try {
+      const appointmentData = {
+        name,
+        service,
+        date,
+        time,
+        note,
+      };
+      const res = await axios.post(
+        "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations",
+        appointmentData
+      );
+
+      console.log(res.data);
+    } catch (error) {
+      console.log({ error });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -71,7 +97,7 @@ const AppointmentScheduler = () => {
   };
   return (
     <ConfigProvider locale={esES}>
-      <form onSubmit={handleSubmit} className="cita-container">
+      <form onSubmit={createAppointment} className="cita-container">
         <h2>Agendar un cita</h2>
         <DatePicker
           onChange={handleDateChange}
