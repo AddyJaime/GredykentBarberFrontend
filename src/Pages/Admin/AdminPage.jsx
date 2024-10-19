@@ -11,7 +11,7 @@ const AdminPage = () => {
     const fetchDataRervations = async () => {
       try {
         const response = await fetch(
-          "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/"
+          "https://glacial-inlet-20229-b247140b1d4c.herokuapp.com/api/reservations"
         );
         const data = await response.json();
         setReservations(data);
