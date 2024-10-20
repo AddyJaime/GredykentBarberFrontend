@@ -80,6 +80,13 @@ const AppointmentScheduler = () => {
           value={name}
           className="name-input"
         />
+        <input
+          type="text"
+          placeholder="Ingrese su número de teléfono"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          className="name-input"
+        />
         <textarea
           placeholder="Anadir una nota"
           value={note}
