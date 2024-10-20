@@ -60,7 +60,7 @@ const AppointmentScheduler = () => {
   return (
     <ConfigProvider locale={esES}>
       <form onSubmit={createAppointment} className="cita-container">
-        <h2>Agendar un cita</h2>
+        <h2>Agendar una cita</h2>
         <DatePicker
           onChange={handleDateChange}
           placeholder="Selecciona un dia"
