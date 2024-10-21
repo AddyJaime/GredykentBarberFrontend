@@ -10,7 +10,9 @@ const AppointmentScheduler = () => {
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
   const [note, setNote] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [service, setService] = useState("haircut");
+  // eslint-disable-next-line no-unused-vars
   const [message, setMessage] = useState("");
   const [isModelVisible, setModelVisible] = useState(false);
 

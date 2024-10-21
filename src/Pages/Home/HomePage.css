@@ -82,3 +82,12 @@
 .btn-panel {
   margin-top: 200px;
 }
+
+@media screen and (min-width: 1920px) {
+  .barber-shop-name h1 {
+    font-size: 60px;
+  }
+  .barber-shop-name p {
+    display: block;
+  }
+}

@@ -34,3 +34,9 @@
   color: #dcdcdc;
   margin: 10px 0;
 }
+
+@media screen and (min-width: 1920px) {
+  .welcome-section {
+    max-width: 100%;
+  }
+}
