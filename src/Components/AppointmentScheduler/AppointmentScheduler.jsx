@@ -9,7 +9,7 @@ const AppointmentScheduler = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [phoneNumber, setPhonenumber] = useState("");
   const [note, setNote] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [service, setService] = useState("haircut");
@@ -17,9 +17,9 @@ const AppointmentScheduler = () => {
   const [message, setMessage] = useState("");
   const [isModelVisible, setModelVisible] = useState(false);
 
-  const validatePhoneNumber = (number) => {
+  const validatePhoneNumber = (phoneNumber) => {
     const phoneRegex = /^[0-9]{10}$/;
-    return phoneRegex.test(number);
+    return phoneRegex.test(phoneNumber);
   };
 
   const handleDateChange = (date, dateString) => {
@@ -37,7 +37,7 @@ const AppointmentScheduler = () => {
       return;
     }
 
-    if (!validatePhoneNumber(number)) {
+    if (!validatePhoneNumber(phoneNumber)) {
       setMessage("Por favor, ingrese un número de teléfono válido.");
       return;
     }
@@ -48,8 +48,10 @@ const AppointmentScheduler = () => {
         date,
         time,
         note,
-        number,
+        number: phoneNumber,
       };
+
+      console.log(appointmentData);
       const res = await axios.post("/api/reservations", appointmentData);
 
       setMessage("cita creada con exito");
@@ -57,7 +59,7 @@ const AppointmentScheduler = () => {
       setNote("");
       setTime("");
       setDate("");
-      setNumber("");
+      setPhonenumber("");
       setModelVisible(true);
 
       console.log(res.data);
@@ -97,8 +99,11 @@ const AppointmentScheduler = () => {
         <input
           type="text"
           placeholder="Ingrese su numero de telefono"
-          onChange={(e) => setNumber(e.target.value)}
-          value={number}
+          onChange={(e) => {
+            console.log("numero ingresado", e.target.value);
+            setPhonenumber(e.target.value);
+          }}
+          value={phoneNumber}
           className="number-input"
         />
 
