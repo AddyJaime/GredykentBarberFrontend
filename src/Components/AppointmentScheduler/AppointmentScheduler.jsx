@@ -18,7 +18,7 @@ const AppointmentScheduler = () => {
   const [isModelVisible, setModelVisible] = useState(false);
 
   const validatePhoneNumber = (number) => {
-    const phoneRegex = /^[0-9] {10}$/;
+    const phoneRegex = /^[0-9]{10}$/;
     return phoneRegex.test(number);
   };
 
