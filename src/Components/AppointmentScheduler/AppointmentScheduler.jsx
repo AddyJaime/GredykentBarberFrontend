@@ -17,6 +17,11 @@ const AppointmentScheduler = () => {
   const [message, setMessage] = useState("");
   const [isModelVisible, setModelVisible] = useState(false);
 
+  const validatePhoneNumber = (number) => {
+    const phoneRegex = /^[0-9] {10}$/;
+    return phoneRegex.test(number);
+  };
+
   const handleDateChange = (date, dateString) => {
     setDate(dateString);
   };
@@ -29,6 +34,11 @@ const AppointmentScheduler = () => {
     e.preventDefault();
     if (!name || !date || !time) {
       setMessage("Por favor, llena todos los campos requeridos.");
+      return;
+    }
+
+    if (!validatePhoneNumber(number)) {
+      setMessage("Por favor, ingrese un número de teléfono válido.");
       return;
     }
     try {
