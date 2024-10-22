@@ -9,6 +9,7 @@ const AppointmentScheduler = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
   const [note, setNote] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [service, setService] = useState("haircut");
@@ -37,6 +38,7 @@ const AppointmentScheduler = () => {
         date,
         time,
         note,
+        number,
       };
       const res = await axios.post("/api/reservations", appointmentData);
 
@@ -45,7 +47,7 @@ const AppointmentScheduler = () => {
       setNote("");
       setTime("");
       setDate("");
-
+      setNumber("");
       setModelVisible(true);
 
       console.log(res.data);
@@ -84,11 +86,12 @@ const AppointmentScheduler = () => {
         />
         <input
           type="text"
-          placeholder="Ingrese su número de teléfono"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          className="name-input"
+          placeholder="Ingrese su numero de telefono"
+          onChange={(e) => setNumber(e.target.value)}
+          value={number}
+          className="number-input"
         />
+
         <textarea
           placeholder="Anadir una nota"
           value={note}

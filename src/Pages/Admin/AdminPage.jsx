@@ -41,6 +41,7 @@ const AdminPage = () => {
         <thead>
           <tr>
             <th>Name:</th>
+            <th>Number:</th>
             <th>Service:</th>
             <th>Date:</th>
             <th>Time:</th>
@@ -53,6 +54,7 @@ const AdminPage = () => {
             reservations.map((r) => (
               <tr key={r.id}>
                 <td>{r.name}</td>
+                <td>{r.number}</td>
                 <td>{r.service}</td>
                 <td>{new Date(r.date).toLocaleDateString()}</td>
                 <td>{r.time}</td>

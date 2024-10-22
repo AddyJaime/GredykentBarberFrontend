@@ -35,3 +35,12 @@
 .profile-information p {
   margin: 5px 0;
 }
+
+@media screen and (min-width: 1920px) {
+  .profile-container {
+    padding-left: 300px;
+  }
+  .profile-information {
+    padding-left: 300px;
+  }
+}

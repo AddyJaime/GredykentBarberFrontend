@@ -17,10 +17,11 @@
 .date-picker,
 .time-picker,
 .name-input,
-.note-input {
+.note-input,
+.number-input {
   width: 100%;
   max-width: 300px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .selected-info p {
@@ -30,6 +31,16 @@
 
 .note-input {
   height: 60px;
+}
+
+.number-input {
+  width: 100%;
+  max-width: 300px;
+  font-size: 15px;
+  padding: 10px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 .name-input {
@@ -89,4 +100,27 @@
 .ant-picker-panel-container {
   background-color: #fff;
   color: #000;
+}
+
+@media screen and (min-width: 1920px) {
+  .cita-container {
+    height: 100vh;
+    padding-bottom: 200px;
+  }
+
+  .cita-container h2 {
+    font-size: 50px;
+  }
+
+  .date-picker,
+  .time-picker,
+  .name-input,
+  .note-input,
+  .number-input {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+  }
 }
